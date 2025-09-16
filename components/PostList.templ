@@ -1,0 +1,9 @@
+package components
+
+import "blog/data"
+
+templ PostList(posts []*data.Post, tag string, lang string) {
+	for _, p := range data.FilterAndSortPosts(posts, tag) {
+		@MinifiedPostView(p, lang)
+	}
+}

@@ -1,0 +1,16 @@
+package components
+
+import "blog/data"
+
+templ Post(p *data.Post) {
+	<article class="prose prose-invert max-w-3xl mx-auto">
+		<h1 class="text-accent">{ p.Meta.Title }</h1>
+		<p class="text-sm text-gray-400">{ p.Meta.Created_at } • { p.Meta.Author }</p>
+		if p.Meta.Cover != "" {
+			<img src={ p.Meta.Cover } alt="cover" class="rounded border border-accent my-6"/>
+		}
+		<div>
+			@templ.Raw(string(p.HTML))
+		</div>
+	</article>
+}

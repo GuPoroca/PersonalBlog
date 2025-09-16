@@ -1,0 +1,18 @@
+package components
+
+import "blog/data"
+
+templ MinifiedPostView(p *data.Post, lang string) {
+	<div class="bg-[#1a0a3a] border border-accent rounded-none p-4 flex flex-col space-y-4">
+		if p.Meta.Cover != "" {
+			<div class="aspect-w-16 aspect-h-9">
+				<img src={ p.Meta.Cover } alt="cover" class="object-cover w-full h-full border-2 border-accent"/>
+			</div>
+		}
+		<h2 class="text-xl font-semibold text-accent">{ p.Meta.Title }</h2>
+		<p class="text-sm">{ p.Meta.Description }</p>
+		<a href={ "/" + lang + "/blog/" + p.Slug } class="mt-auto px-3 py-2 border border-accent text-accent hover:bg-accent hover:text-background transition text-center">
+			Read More
+		</a>
+	</div>
+}

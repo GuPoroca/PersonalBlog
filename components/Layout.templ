@@ -1,0 +1,76 @@
+
+package components
+
+templ Layout(content templ.Component) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>GuPoroca </title>
+			<link rel="icon" href="/favicon.png"/>
+			<!-- Terminal theme -->
+			<link href="/static/all.css" rel="stylesheet"/>
+			<link href="/static/colors.css" rel="stylesheet"/>
+			<!-- HTMX -->
+			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+		</head>
+		<body>
+			<!-- Navbar -->
+			<nav class="header" style="max-width: 900px; margin: 0 auto; padding: 0 3rem;">
+				<div class="header__inner" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+					<!-- Left -->
+					<div style="flex: 1; display: flex; justify-content: flex-start;">
+						<a href="/blog" class="logo">Home</a>
+					</div>
+					<!-- Middle (tags) -->
+					<div style="flex: 1; display: flex; justify-content: center;">
+						<ul class="navigation-menu__inner" style="display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0;">
+							<li><button hx-get="/blog?tag=golang" hx-target="#main-content" hx-swap="innerHTML" class="button link">#golang</button></li>
+							<li><button hx-get="/blog?tag=templ" hx-target="#main-content" hx-swap="innerHTML" class="button link">#templ</button></li>
+							<li><button hx-get="/blog?tag=qa" hx-target="#main-content" hx-swap="innerHTML" class="button link">#qa</button></li>
+						</ul>
+					</div>
+					<!-- Right -->
+					<div style="flex: 1; display: flex; justify-content: flex-end;">
+						<select id="lang-switch" class="px-2 py-1 rounded bg-gray-800 text-white">
+							<option value="en">English</option>
+							<option value="br">Português</option>
+						</select>
+					</div>
+				</div>
+			</nav>
+			<!-- Main -->
+			<main id="main-content" class="content" style="max-width: 900px; margin: 0 auto; padding: 0 3rem;">
+				@content
+			</main>
+			<!-- Language Switcher Script -->
+			<script>
+			(function () {
+			  var sel = document.getElementById('lang-switch');
+
+			  // Reflect current URL language in the dropdown
+			  var m = location.pathname.match(/^\/(en|br)(?=\/|$)/);
+			  sel.value = m ? m[1] : 'en';
+
+			  // On change, swap language prefix but keep the rest of the URL
+			  sel.addEventListener('change', function () {
+			    var newLang = this.value;
+
+			    // Remove current /en or /br prefix if present
+			    var path = location.pathname.replace(/^\/(en|br)(?=\/|$)/, '');
+			    if (path === '' || path === '/') path = '/';
+
+			    var newPath = '/' + newLang + (path.startsWith('/') ? '' : '/') + path;
+
+			    // Normalize accidental double slashes
+			    newPath = newPath.replace(/\/{2,}/g, '/');
+
+			    // Navigate to new URL (preserve query & hash)
+			    location.href = newPath + location.search + location.hash;
+			  });
+			})();
+			</script>
+		</body>
+	</html>
+}
