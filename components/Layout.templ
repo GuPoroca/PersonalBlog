@@ -17,30 +17,35 @@ templ Layout(content templ.Component) {
 		</head>
 		<body>
 			<!-- Navbar -->
-			<nav class="header" style="max-width: 900px; margin: 0 auto; padding: 0 3rem;">
-				<div class="header__inner" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-					<!-- Left -->
-					<div style="flex: 1; display: flex; justify-content: flex-start;">
-						<a href="/blog" class="logo">Home</a>
-					</div>
-					<!-- Middle (tags) -->
-					<div style="flex: 1; display: flex; justify-content: center;">
-						<ul class="navigation-menu__inner" style="display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0;">
-							<li><button hx-get="/blog?tag=golang" hx-target="#main-content" hx-swap="innerHTML" class="button link">#golang</button></li>
-							<li><button hx-get="/blog?tag=templ" hx-target="#main-content" hx-swap="innerHTML" class="button link">#templ</button></li>
-							<li><button hx-get="/blog?tag=qa" hx-target="#main-content" hx-swap="innerHTML" class="button link">#qa</button></li>
-						</ul>
-					</div>
-					<!-- Right -->
-					<div style="flex: 1; display: flex; justify-content: flex-end;">
-						<select id="lang-switch" class="px-2 py-1 rounded bg-gray-800 text-white">
-							<option value="en">English</option>
-							<option value="br">Português</option>
-						</select>
-					</div>
+			<nav class="navbar__inner" style=" margin: 0 auto; padding: 0.75 3rem;">
+				<!-- Left -->
+				<div class="navbar__left">
+					<a href="/blog" class="logo">Home</a>
+				</div>
+				<!-- Middle (tags) -->
+				<div class="navbar__center">
+					<ul class="navbar__menu">
+						<li><a href="/blog?tag=apollo">Apollo</a></li>
+						<li><a href="/blog?tag=athena">Athena</a></li>
+						<li><a href="/blog?tag=daedalus">Daedalus</a></li>
+						<li><a href="/blog?tag=hephaestus">Hephaestus</a></li>
+					</ul>
+					<select class="navbar__menu--dropdown" id="menu-dropdown">
+						<option value="" disabled selected>Tag</option> <!-- placeholder -->
+						<option value="/blog?tag=apollo">Apollo</option>
+						<option value="/blog?tag=athena">Athena</option>
+						<option value="/blog?tag=daedalus">Daedalus</option>
+						<option value="/blog?tag=Hephaestus">Hephaestus</option>
+					</select>
+				</div>
+				<!-- Right -->
+				<div class="navbar__right">
+					<select id="lang-switch" class="lang-select">
+						<option value="en">English</option>
+						<option value="br">Português</option>
+					</select>
 				</div>
 			</nav>
-			<!-- Main -->
 			<main id="main-content" class="content" style="max-width: 900px; margin: 0 auto; padding: 0 3rem;">
 				@content
 			</main>
@@ -71,6 +76,46 @@ templ Layout(content templ.Component) {
 			  });
 			})();
 			</script>
+			<script>
+  const menuList = document.getElementById("menu-list");
+  const menuDropdown = document.getElementById("menu-dropdown");
+
+  // --- 1. Overflow detector ---
+  function toggleMenu() {
+    const isOverflowing = menuList.scrollWidth > menuList.clientWidth;
+    if (isOverflowing) {
+      menuList.style.display = "none";
+      menuDropdown.style.display = "block";
+    } else {
+      menuList.style.display = "flex";
+      menuDropdown.style.display = "none";
+    }
+  }
+
+  window.addEventListener("resize", toggleMenu);
+  window.addEventListener("load", toggleMenu);
+
+  // --- 2. Navigate when selecting option ---
+  menuDropdown.addEventListener("change", function () {
+    if (this.value) {
+      window.location.href = this.value;
+    }
+  });
+
+  // --- 3. Reflect current URL tag in dropdown ---
+const tagMatch = location.search.match(/tag=([^&]+)/);
+if (tagMatch) {
+  const currentTag = tagMatch[1].toLowerCase();
+  for (let option of menuDropdown.options) {
+    if (option.value.toLowerCase().includes(currentTag)) {
+      menuDropdown.value = option.value;
+      break;
+    }
+  }
+} else {
+  menuDropdown.value = ""; // stays on "Tag"
+  }
+</script>
 		</body>
 	</html>
 }

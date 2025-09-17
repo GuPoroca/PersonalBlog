@@ -3,14 +3,20 @@ package components
 import "blog/data"
 
 templ Post(p *data.Post) {
-	<article class="prose prose-invert max-w-3xl mx-auto">
-		<h1 class="text-accent">{ p.Meta.Title }</h1>
-		<p class="text-sm text-gray-400">{ p.Meta.Created_at } • { p.Meta.Author }</p>
-		if p.Meta.Cover != "" {
-			<img src={ p.Meta.Cover } alt="cover" class="rounded border border-accent my-6"/>
-		}
-		<div>
-			@templ.Raw(string(p.HTML))
-		</div>
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">{ p.Meta.Title }</h1>
+			if p.Meta.Cover != "" {
+				<img src={ p.Meta.Cover } alt="cover" class="post-cover"/>
+			}
+			<div class="post__meta">
+				<span class="post__date">{ p.Meta.Created_at }</span>
+				<span class="post__author">by { p.Meta.Author }</span>
+			</div>
+		</header>
+		<section class="post__content">
+			@templ.Raw(p.HTML)
+			<!-- allows HTML from Markdown parsing -->
+		</section>
 	</article>
 }

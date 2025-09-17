@@ -41,7 +41,7 @@ func main() {
 Here’s a <figure> block written in HTML:
 
 <figure>
-    <img src="/img/test-image.jpg" alt="Test image" />
+    <img src="/images/cover-sample.png" alt="Test image" />
     <figcaption>
         <p>This is a **caption** that should look different.</p>
     </figcaption>
@@ -74,5 +74,5 @@ Here’s a Markdown-style link: [Go Docs](https://golang.org).
 
 Here’s a Markdown-style image:  
 
-![Cute Penguin](/img/penguin.jpg)
+![Cute Penguin](/images/cover-sample.png)
 
