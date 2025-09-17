@@ -1334,3 +1334,97 @@ h6:hover .hanchor {
   left: -20px;
   color: var(--accent);
 }
+
+
+/* NAVBAR STYLING */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, #141414, #1f1f1e, #141414);
+  border-bottom: 1px solid #00c8ff; /* delimiter line */
+}
+
+.navbar__inner {
+  padding: 0.75rem 3rem;   /* defines the horizontal gutters */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* left + right pinned, center stays in middle */
+  background: linear-gradient(to right, #141414, #1f1f1e, #141414);
+  border-bottom: 1px solid #00c8ff; /* delimiter line */
+
+}
+
+/* Left and right only take as much space as needed */
+.navbar__left,
+.navbar__right {
+  flex: 0 0 auto;
+}
+
+/* Center expands, but contents stay centered */
+.navbar__center {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+.navbar__center {
+  justify-content: center;
+}
+
+.navbar__right {
+  justify-content: flex-end;
+}
+
+/* NAV MENU */
+.navbar__menu {
+  display: flex;
+  gap: 2rem;              /* consistent spacing */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;      /* prevent wrapping */
+}
+
+.navbar__menu li a {
+  color: #00c8ff;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.navbar__menu li a:hover {
+  color: #fff;
+}
+
+/* Language dropdown */
+.lang-select {
+  background-color: #141414;
+  color: #fff;
+  border: 1px solid #00c8ff;
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem; /* give some breathing room */
+  display: inline-block;
+  width: auto;              /* allow width to follow content */
+  min-width: 130px;         /* force enough room for "Português" */
+  box-sizing: border-box;   /* make padding count in width */
+}
+
+
+/* Dropdown hidden by default */
+.navbar__menu--dropdown {
+  display: none;
+  background: #141414;
+  color: #fff;
+  border: 1px solid #00c8ff;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+}
+
+/* When screen is narrow, hide inline menu, show dropdown */
+@media (max-width: 700px) {
+  .navbar__menu {
+    display: none;
+  }
+  .navbar__menu--dropdown {
+    display: block;
+  }
+}

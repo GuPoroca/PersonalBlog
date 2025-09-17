@@ -11,7 +11,7 @@ templ MinifiedPostView(p *data.Post, lang string) {
 		}
 		<h2 class="text-xl font-semibold text-accent">{ p.Meta.Title }</h2>
 		<p class="text-sm">{ p.Meta.Description }</p>
-		<a href={ "/" + lang + "/blog/" + p.Slug } class="mt-auto px-3 py-2 border border-accent text-accent hover:bg-accent hover:text-background transition text-center">
+		<a href={ "/" + lang + "/blog/" + p.Slug } class="a.read-more">
 			Read More
 		</a>
 	</div>
