@@ -14,7 +14,7 @@ cover = "/images/eu.jpg"
 Meu nome é Gustavo Poroca, sou (quase) graduado em Engenharia da Computação na UPE e estou construindo esse blog no meu tempo livre para documentar um pouco das atividades do meu dia a dia!
 
 ## Um pouco sobre mim:
-Meus hobbies são muito relacionados a computação, é uma atividade que eu genuinamente gosto, tirando isso amo puzzles (cubo mágico em específico) e volêi, mesmo tendo jogado pouco ultimamente. Atualmente trabalho como Engenheiro QA no CESAR, além disso amo gatos e pinguims.
+Meus hobbies são muito relacionados a computação, é uma atividade que eu genuinamente gosto, tirando isso amo puzzles (cubo mágico em específico) e volêi, mesmo tendo jogado pouco ultimamente. Atualmente trabalho como Engenheiro QA no CESAR, além disso amo gatos e pinguins.
 
 Como eu disse anteriormente meus planos por aqui são documentar meus pensamentos e atividades, se tiver interesse pode entrar em contato comigo para fazermos um projeto juntos ou para conversar e discutir sobre os tópicos aqui trazidos.
 
