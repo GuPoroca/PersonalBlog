@@ -21,6 +21,7 @@ import (
 
 type Meta struct {
 	Title        string   `toml:"title"`
+	Postname     string   `toml:"postname"`
 	Description  string   `toml:"description"`
 	Created_at   string   `toml:"created_at"`
 	Last_updated string   `toml:"last_updated"`
@@ -75,7 +76,7 @@ func ParseMarkdownFile(path string) (*Post, error) {
 	}
 
 	// Generate slug from title if not set
-	slug := Slugify(meta.Title)
+	slug := Slugify(meta.Postname)
 
 	return &Post{
 		Meta:              meta,
@@ -100,6 +101,8 @@ func FilterAndSortPosts(posts []*Post, tag string) []*Post {
 	// Filter by tag if provided
 	var filtered []*Post
 	for _, p := range posts {
+		log.Print("tag: " + tag)
+		log.Print(p.Meta.Tags)
 		if tag == "" {
 			filtered = append(filtered, p)
 			continue
@@ -126,7 +129,7 @@ func Slugify(title string) string {
 	slug = strings.ReplaceAll(slug, " ", "-")
 	slug = strings.ReplaceAll(slug, "'", "")
 	slug = strings.ReplaceAll(slug, "\"", "")
-	slug = slug + ".md"
+	slug = slug
 	return slug
 }
 

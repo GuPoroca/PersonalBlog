@@ -15,7 +15,7 @@ templ Layout(content templ.Component) {
 			<!-- HTMX -->
 			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
 		</head>
-		<body>
+		<body class="body">
 			<!-- Navbar -->
 			<nav class="navbar__inner" style=" margin: 0 auto; padding: 0.75 3rem;">
 				<!-- Left -->
@@ -46,7 +46,7 @@ templ Layout(content templ.Component) {
 					</select>
 				</div>
 			</nav>
-			<main id="main-content" class="content" style="max-width: 900px; margin: 0 auto; padding: 0 3rem;">
+			<main id="main-content" class="content" style="max-width: 700px; margin: 0 auto; padding: 0 3rem; left: 30%;">
 				@content
 			</main>
 			<!-- Language Switcher Script -->
@@ -116,6 +116,7 @@ if (tagMatch) {
   menuDropdown.value = ""; // stays on "Tag"
   }
 </script>
+			@Footer()
 		</body>
 	</html>
 }

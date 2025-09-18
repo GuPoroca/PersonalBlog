@@ -1,76 +1,3 @@
-.button-container {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-button,
-.button,
-a.button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 18px;
-  text-decoration: none;
-  text-align: center;
-  font: inherit;
-  font-weight: bold;
-  appearance: none;
-  cursor: pointer;
-  outline: none;
-}
-
-button.outline,
-.button.outline,
-a.button.outline {
-  background: transparent;
-  box-shadow: none;
-  padding: 8px 18px;
-}
-
-button.outline :hover,
-.button.outline :hover,
-a.button.outline :hover {
-  transform: none;
-  box-shadow: none;
-}
-
-button.link,
-.button.link,
-a.button.link {
-  background: none;
-  font-size: var(--font-size);
-}
-
-button.small,
-.button.small,
-a.button.small {
-  font-size: calc(var(--font-size) * 0.8);
-}
-
-button.wide,
-.button.wide,
-a.button.wide {
-  min-width: 200px;
-  padding: 14px 24px;
-}
-
-a.button.inline {
-  background: none;
-  color: var(--accent);
-  padding: initial;
-  margin: initial;
-  border: initial;
-  font-weight: initial;
-  text-decoration: none;
-}
-
-a.button.inline:active,
-a.button.inline:hover {
-  background: none;
-}
-
 a.read-more,
 a.read-more:hover,
 a.read-more:active {
@@ -84,261 +11,6 @@ a.read-more:active {
 }
 :root {
   --code-border: color-mix(in srgb, var(--foreground) 10%, transparent);
-}
-
-pre:not(.chroma) {
-  padding: 10px;
-}
-
-pre.chroma {
-  margin: 0;
-  padding: 10px 0;
-  color: var(--foreground);
-}
-
-pre code {
-  color: var(--foreground);
-  border: none;
-}
-
-code {
-  color: var(--accent);
-  text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-.highlight {
-  position: relative;
-  margin: 20px 0;
-  border: 1px solid var(--code-border);
-}
-
-.highlight pre {
-  border: none;
-}
-
-.code-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: color-mix(in srgb, var(--foreground) 5%, transparent);
-  border-bottom: 1px solid var(--code-border);
-  color: var(--comment);
-  text-transform:uppercase;
-  font-size: calc(var(--font-size) * 0.8);
-  padding: 6px 10px;
-  line-height: 1;
-}
-
-.copy-button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px 8px;
-  text-decoration: none;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 500;
-  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
-  appearance: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.code-title .copy-button {
-  z-index: 1;
-  background: color-mix(in srgb, var(--foreground) 5%, var(--background));
-}
-
-.code-title:hover .copy-button {
-  display: inline-block;
-}
-
-.code-title .copy-button:hover {
-  background: color-mix(in srgb, var(--accent) 10%, var(--background));
-}
-
-.collapsable-code {
-  position: relative;
-  width: 100%;
-  margin: 20px 0;
-  border: 1px solid var(--accent);
-
-  .highlight {
-    margin: 0;
-  }
-}
-
-.collapsable-code__title {
-  display: inline-flex;
-  align-items: center;
-  flex: 1;
-  color: var(--accent);
-  padding: 3px 10px;
-  font-size: calc(var(--font-size) * 0.9);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.collapsable-code__language {
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-bottom: none;
-  text-transform: uppercase;
-  padding: 3px 10px;
-}
-
-.collapsable-code summary {
-  color: var(--accent);
-  padding: 0 10px;
-  cursor: pointer;
-}
-
-.collapsable-code summary:hover {
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-}
-
-.collapsable-code pre {
-  margin-top: 0;
-}
-
-.collapsable-code pre::first-line {
-  line-height: 0;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Fira Code';
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url("../fonts/FiraCode-LatinExt.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Fira Code';
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url("../fonts/FiraCode-Latin.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-.footer {
-  padding: 40px 0;
-  flex-grow: 0;
-  opacity: 0.65;
-}
-
-.footer__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  max-width: 100%;
-}
-
-.footer a {
-  color: inherit;
-}
-
-.footer .copyright {
-  display: flex;
-  flex-flow: row wrap;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer .copyright--user {
-  margin: auto;
-  text-align: center;
-}
-
-.footer .copyright > *:first-child:not(:only-child) {
-  margin-right: 10px;
-}
-
-.footer .copyright span {
-  white-space: nowrap;
-}
-
-@media (max-width: 900px) {
-  .footer__inner {
-    flex-direction: column;
-  }
-}
-body .gist .blob-num,
-body .gist .blob-code-inner {
-  border: none;
-}
-.header {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__logo {
-  display: flex;
-  flex: 1;
-}
-
-.header__logo::after {
-  content: "";
-  background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 2px, transparent 0, transparent 10px);
-  display: block;
-  width: 100%;
-  right: 10px;
-}
-
-.header__logo a {
-  flex: 0 0 auto;
-  max-width: 100%;
-  text-decoration: none;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  background: var(--accent);
-  color: var(--background);
-  font-weight: bold;
-  padding: 5px 10px;
-}
-
-@media print {
-  .header {
-    display: none;
-  }
-}
-:root {
-  --background: #1a170f;
-  --foreground: #eceae5;
-  --accent: #eec35e;
-  --font-size: 1rem;
-  --line-height: 1.54em;
-  --radius: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  word-break: break-word;
 }
 
 body {
@@ -356,24 +28,24 @@ body {
 }
 
 h1 {
-  font-size: calc(var(--font-size) * 1.45);
+  font-size: 1rem * 15);
   letter-spacing: 0;
 }
 
 h2 {
-  font-size: calc(var(--font-size) * 1.35);
+  font-size: 1rem * 1.35);
   letter-spacing: 0;
 }
 
 h3 {
-  font-size: calc(var(--font-size) * 1.15);
+  font-size: 1rem * 1.15);
   letter-spacing: 0;
 }
 
 h4,
 h5,
 h6 {
-  font-size: calc(var(--font-size) * 1);
+  font-size: 1rem * 1);
   letter-spacing: 0;
 }
 
@@ -565,6 +237,7 @@ figure figcaption {
   font-size: var(--font-size);
   font-weight: normal;
   margin-top: -8px;
+  margin-left: 5%;
   padding: 0 8px;
   border-radius: 0 0 var(--radius) var(--radius);
 }
@@ -1158,58 +831,10 @@ iframe[src*="youtube.com"] {
 }
 
 .post-cover {
+  max-width: 90%; /* Ensures the image doesn't exceed its container's width */
   margin: 25px 0;
 }
 
-.post ul {
-  list-style: none;
-}
-
-.post ul li:not(:empty)::before {
-  content: "-";
-  position: absolute;
-  left: -20px;
-  color: var(--accent);
-}
-
-.post--regulation h1 {
-  justify-content: center;
-}
-
-.post--regulation h2 {
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.post--regulation h2 + h2 {
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
-
-.hanchor {
-  position: absolute;
-  color: var(--accent);
-  text-decoration: none;
-  margin-left: 10px;
-  visibility: hidden;
-}
-
-h1:hover .hanchor,
-h2:hover .hanchor,
-h3:hover .hanchor,
-h4:hover .hanchor,
-h5:hover .hanchor,
-h6:hover .hanchor {
-  visibility: visible;
-}
-
-.footnotes {
-  color: color-mix(in srgb, var(--foreground) 50%, transparent);
-}
-
-.footnotes hr {
-  background: color-mix(in srgb, var(--foreground) 50%, transparent);
-}
 
 @media (max-width: 684px) {
   .post-cover {
@@ -1217,105 +842,13 @@ h6:hover .hanchor {
     border-width: 10px;
   }
 }
+
 :root {
   --first-tone: var(--accent);
   --second-tone: color-mix(in srgb, var(--accent) 70%, transparent);
   --comment: color-mix(in srgb, var(--foreground) 50%, transparent);
 }
 
-/* Background */ .bg { }
-/* PreWrapper */ .chroma { overflow:auto; }
-/* Other */ .chroma .x {  }
-/* Error */ .chroma .err {  }
-/* CodeLine */ .chroma .cl {  }
-/* LineLink */ .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
-/* LineTableTD */ .chroma .lntd { width:100%;vertical-align:top;padding:0;margin:0;border:0; }
-/* LineTableTDNumbers */ .chroma .lntd:first-child { width: auto; }
-/* Custom */ .chroma .lntd code { display:grid; }
-/* LineTable */ .chroma .lntable { width:100%;border-spacing:0;padding:0;margin:0;border:0; }
-/* LineHighlight */ .chroma .hl { background-color:color-mix(in srgb, var(--foreground) 5%, transparent) !important}
-/* LineNumbersTable */ .chroma .lnt { color:var(--comment);white-space:pre;-webkit-user-select:none;user-select:none;padding:0 10px; }
-/* LineNumbers */ .chroma .ln { color:var(--comment);white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.8em;padding:0 0.4em 0 0; }
-/* Line */ .chroma .line { display:flex;padding:0 10px; }
-/* Keyword */ .chroma .k { color:var(--second-tone) }
-/* KeywordConstant */ .chroma .kc { color:var(--second-tone) }
-/* KeywordDeclaration */ .chroma .kd { color:var(--second-tone) }
-/* KeywordNamespace */ .chroma .kn { color:var(--second-tone) }
-/* KeywordPseudo */ .chroma .kp { color:var(--second-tone) }
-/* KeywordReserved */ .chroma .kr { color:var(--second-tone) }
-/* KeywordType */ .chroma .kt { color:var(--second-tone) }
-/* Name */ .chroma .n { color:var(--first-tone) }
-/* NameAttribute */ .chroma .na { color:var(--second-tone) }
-/* NameBuiltin */ .chroma .nb { color:var(--first-tone) }
-/* NameBuiltinPseudo */ .chroma .bp { color:var(--first-tone) }
-/* NameClass */ .chroma .nc { color:var(--foreground) }
-/* NameConstant */ .chroma .no { color:var(--first-tone) }
-/* NameDecorator */ .chroma .nd { color:var(--first-tone) }
-/* NameEntity */ .chroma .ni { color:var(--first-tone) }
-/* NameException */ .chroma .ne { color:var(--first-tone) }
-/* NameFunction */ .chroma .nf { color:var(--first-tone); }
-/* NameFunctionMagic */ .chroma .fm { color:var(--first-tone); }
-/* NameLabel */ .chroma .nl { color:var(--first-tone) }
-/* NameNamespace */ .chroma .nn { color:var(--first-tone) }
-/* NameOther */ .chroma .nx { color:var(--first-tone) }
-/* NameProperty */ .chroma .py { color:var(--first-tone) }
-/* NameTag */ .chroma .nt { color:var(--first-tone) }
-/* NameVariable */ .chroma .nv { color:var(--first-tone) }
-/* NameVariableClass */ .chroma .vc { color:var(--first-tone) }
-/* NameVariableGlobal */ .chroma .vg { color:var(--first-tone) }
-/* NameVariableInstance */ .chroma .vi { color:var(--first-tone) }
-/* NameVariableMagic */ .chroma .vm { color:var(--first-tone) }
-/* Literal */ .chroma .l {  }
-/* LiteralDate */ .chroma .ld {  }
-/* LiteralString */ .chroma .s { color:var(--foreground) }
-/* LiteralStringAffix */ .chroma .sa { color:var(--foreground) }
-/* LiteralStringBacktick */ .chroma .sb { color:var(--foreground) }
-/* LiteralStringChar */ .chroma .sc { color:var(--foreground) }
-/* LiteralStringDelimiter */ .chroma .dl { color:var(--foreground) }
-/* LiteralStringDoc */ .chroma .sd { color:var(--foreground) }
-/* LiteralStringDouble */ .chroma .s2 { color:var(--foreground) }
-/* LiteralStringEscape */ .chroma .se { color:var(--foreground) }
-/* LiteralStringHeredoc */ .chroma .sh { color:var(--foreground) }
-/* LiteralStringInterpol */ .chroma .si { color:var(--foreground) }
-/* LiteralStringOther */ .chroma .sx { color:var(--foreground) }
-/* LiteralStringRegex */ .chroma .sr { color:var(--foreground) }
-/* LiteralStringSingle */ .chroma .s1 { color:var(--foreground) }
-/* LiteralStringSymbol */ .chroma .ss { color:var(--foreground) }
-/* LiteralNumber */ .chroma .m { color:var(--first-tone) }
-/* LiteralNumberBin */ .chroma .mb { color:var(--first-tone) }
-/* LiteralNumberFloat */ .chroma .mf { color:var(--first-tone) }
-/* LiteralNumberHex */ .chroma .mh { color:var(--first-tone) }
-/* LiteralNumberInteger */ .chroma .mi { color:var(--first-tone) }
-/* LiteralNumberIntegerLong */ .chroma .il { color:var(--first-tone) }
-/* LiteralNumberOct */ .chroma .mo { color:var(--first-tone) }
-/* Operator */ .chroma .o { color:var(--foreground) }
-/* OperatorWord */ .chroma .ow { color:var(--foreground) }
-/* Punctuation */ .chroma .p { color:var(--foreground) }
-/* Comment */ .chroma .c { color:var(--comment) }
-/* CommentHashbang */ .chroma .ch { color:var(--comment) }
-/* CommentMultiline */ .chroma .cm { color:var(--comment) }
-/* CommentSingle */ .chroma .c1 { color:var(--comment) }
-/* CommentSpecial */ .chroma .cs { color:var(--comment) }
-/* CommentPreproc */ .chroma .cp { color:var(--comment) }
-/* CommentPreprocFile */ .chroma .cpf { color:var(--comment) }
-/* Generic */ .chroma .g {  }
-/* GenericDeleted */ .chroma .gd { color:var(--first-tone) }
-/* GenericEmph */ .chroma .ge {  }
-/* GenericError */ .chroma .gr {  }
-/* GenericHeading */ .chroma .gh {  }
-/* GenericInserted */ .chroma .gi { color:var(--second-tone); }
-/* GenericOutput */ .chroma .go {  }
-/* GenericPrompt */ .chroma .gp {  }
-/* GenericStrong */ .chroma .gs {  }
-/* GenericSubheading */ .chroma .gu {  }
-/* GenericTraceback */ .chroma .gt {  }
-/* GenericUnderline */ .chroma .gl {  }
-/* TextWhitespace */ .chroma .w {  }
-
-/* LANGUAGE FIXES */
-/* PHP CommentPreproc */ .chroma .language-php .cp { color:var(--foreground) }
-/* Placeholder file for your custom settings. */
-/* You can get the color scheme variables from https://panr.github.io/terminal-css/ */
 .terms h3 {
   font-size: initial;
 }
@@ -1428,3 +961,46 @@ h6:hover .hanchor {
     display: block;
   }
 }
+
+.footer {
+  width: 100%;
+  border-top: 1px solid #00c8ff;
+  background: linear-gradient(to right, #141414, #1f1f1e, #141414);
+  color: #d1d5db; /* equivalente ao gray-300 */
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+.footer__container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* substitui space-y-4 */
+}
+
+.footer__links {
+  display: flex;
+  gap: 2rem; /* substitui space-x-8 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* substitui space-x-2 */
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #00c8ff;
+}
+
+.footer__copy {
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* gray-500 */
+}
+
