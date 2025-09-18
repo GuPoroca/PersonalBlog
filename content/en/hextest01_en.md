@@ -11,15 +11,15 @@ cover = "/images/hextest.jpg"
 
 # About testing REST APIs
 
-Right when I started at my current job, I felt like I had been hired to solve the project’s automation problems. I didn’t have much experience with the testing framework they used (Mocha Chai), and it took a while to get things working again little by little.
+Right when I started at my current job, I felt like I had been hired to solve the project’s test automation problems. I didn’t have much experience with the testing framework they used (Mocha Chai), and it took me a while to get things working again little by little.
 
 ### I was the only one touching it
 
-Apparently, before I joined, another QA Engineer had worked on the automated tests, but from the day she was let go until the day I left that project, I was the only one maintaining and interacting with that repository. This meant that when I was reassigned to another project, yet again someone else had to go through the same painful process of trying to understand what was going on there. And this wasn’t limited by the person’s seniority, but rather by the tests themselves.
+Apparently, before I joined, another QA Engineer had worked on the automated tests, but from the day she was fired until the day I left that project, I was the only one maintaining and interacting with that repository. This meant that when I was reassigned to another project, yet again someone else had to go through the same painful process of trying to understand what was going on there. And this wasn’t limited by the person’s seniority, but rather by the tests themselves.
 
-## I want to get back to coding
+## I wanted to get back to coding
 
-In August of this year, I realized that I had become too comfortable, and I wanted to create a project to get back to practicing programming. My developer side had been dormant, and whenever I needed some code, I first tried to get it through AI.
+In August of this year, I realized that I had become too comfortable, and I wanted to create a project to get back into practicing programming. My developer side had been dormant, and whenever I needed some code, I first tried to get it through AI.
 
 <figure>
     <img src="/images/gopher.jpg" alt="photo">
