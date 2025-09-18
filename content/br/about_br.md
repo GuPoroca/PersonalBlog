@@ -30,7 +30,7 @@ Como eu disse anteriormente meus planos por aqui são documentar meus pensamento
 Ah, você deve estar se perguntando sobre os nomes das figuras gregas no cabeçalho do blog. Eu também sou fascinado por mitologia, e quis trazer um pouco disso, atualmente o site estará organizado em 4 tags:
 
 - Apollo: Deus do sol e das belas artes. Aqui vão ficar todas as minhas atividades mais relacionadas as minhas veias artísticas, que infelizmente não são tão fortes
-- Athena: Deusa da sabedoria e razão. Aqui vão ficar alguns posts relacionados a minha opnião pessoal sobre alguns tópicos, nos que não tiverem essa tag, vou tentar deixar o mais objetivo que eu consiga
+- Athena: Deusa da sabedoria e razão. Aqui vão ficar alguns posts relacionados a minha opinião pessoal sobre alguns tópicos, nos que não tiverem essa tag, vou tentar deixar o mais objetivo que eu consiga
 - Daedalus: Um Arquiteto e Inventor talentoso. O único que é mortal e a minha especialidade, irônico não? Daedalus vai ser a tag para tudo relacionado a software do meu blog, vou postar projetos e outras coisas
 - Hephaestus: Deus da forja e dos artesãos. Aqui vai ficar todas as minhas experiências mexendo com Hardware, que eu também gosto bastante, mas levo muito mais como um hobby do que qualquer coisa próxima de algo profissional
 
