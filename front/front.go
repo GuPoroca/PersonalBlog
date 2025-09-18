@@ -18,6 +18,9 @@ func Front() {
 	FileServer(r, "/images", http.Dir("images"))
 
 	// List posts (default = en, or ?lang=br, or /{lang}/blog)
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "/blog", http.StatusFound) // 302 redirect
+	})
 	r.Get("/blog", BlogListHandler)
 	r.Get("/{lang}/blog", BlogListHandler)
 
