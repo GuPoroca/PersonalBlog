@@ -23,6 +23,7 @@ func Front() {
 	})
 	r.Get("/blog", BlogListHandler)
 	r.Get("/{lang}/blog", BlogListHandler)
+	r.Get("/{lang}/blog/tags/{tag}", BlogListHandler)
 
 	// Single post
 	r.Get("/{lang}/blog/{slug}", BlogPostHandler)

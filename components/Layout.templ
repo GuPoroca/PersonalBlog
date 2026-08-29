@@ -1,7 +1,7 @@
 
 package components
 
-templ Layout(content templ.Component) {
+templ Layout(content templ.Component, lang string) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -20,22 +20,22 @@ templ Layout(content templ.Component) {
 			<nav class="navbar__inner" style=" margin: 0 auto; padding: 0.75 3rem;">
 				<!-- Left -->
 				<div class="navbar__left">
-					<a href="/blog" class="logo">Home</a>
+					<a href={ "/" + lang + "/blog/" } class="logo">Home</a>
 				</div>
 				<!-- Middle (tags) -->
 				<div class="navbar__center">
 					<ul class="navbar__menu">
-						<li><a href="/blog?tag=apollo">Apollo</a></li>
-						<li><a href="/blog?tag=athena">Athena</a></li>
-						<li><a href="/blog?tag=daedalus">Daedalus</a></li>
-						<li><a href="/blog?tag=hephaestus">Hephaestus</a></li>
+						<li><a href={ "/" + lang + "/blog/tags/apollo/" }>Apollo</a></li>
+						<li><a href={ "/" + lang + "/blog/tags/athena/" }>Athena</a></li>
+						<li><a href={ "/" + lang + "/blog/tags/daedalus/" }>Daedalus</a></li>
+						<li><a href={ "/" + lang + "/blog/tags/hephaestus/" }>Hephaestus</a></li>
 					</ul>
 					<select class="navbar__menu--dropdown" id="menu-dropdown">
 						<option value="" disabled selected>Tag</option> <!-- placeholder -->
-						<option value="/blog?tag=apollo">Apollo</option>
-						<option value="/blog?tag=athena">Athena</option>
-						<option value="/blog?tag=daedalus">Daedalus</option>
-						<option value="/blog?tag=Hephaestus">Hephaestus</option>
+						<option value={ "/" + lang + "/blog/tags/apollo/" }>Apollo</option>
+						<option value={ "/" + lang + "/blog/tags/athena/" }>Athena</option>
+						<option value={ "/" + lang + "/blog/tags/daedalus/" }>Daedalus</option>
+						<option value={ "/" + lang + "/blog/tags/hephaestus/" }>Hephaestus</option>
 					</select>
 				</div>
 				<!-- Right -->

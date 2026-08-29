@@ -101,8 +101,6 @@ func FilterAndSortPosts(posts []*Post, tag string) []*Post {
 	// Filter by tag if provided
 	var filtered []*Post
 	for _, p := range posts {
-		log.Print("tag: " + tag)
-		log.Print(p.Meta.Tags)
 		if tag == "" {
 			filtered = append(filtered, p)
 			continue

@@ -9,7 +9,7 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func Layout(content templ.Component) templ.Component {
+func Layout(content templ.Component, lang string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -30,7 +30,124 @@ func Layout(content templ.Component) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>GuPoroca </title><link rel=\"icon\" href=\"/static/favicon.png\"><!-- Terminal theme --><link href=\"/static/all.css\" rel=\"stylesheet\"><link href=\"/static/colors.css\" rel=\"stylesheet\"><!-- HTMX --><script src=\"https://unpkg.com/htmx.org@1.9.10\"></script></head><body class=\"body\"><!-- Navbar --><nav class=\"navbar__inner\" style=\" margin: 0 auto; padding: 0.75 3rem;\"><!-- Left --><div class=\"navbar__left\"><a href=\"/blog\" class=\"logo\">Home</a></div><!-- Middle (tags) --><div class=\"navbar__center\"><ul class=\"navbar__menu\"><li><a href=\"/blog?tag=apollo\">Apollo</a></li><li><a href=\"/blog?tag=athena\">Athena</a></li><li><a href=\"/blog?tag=daedalus\">Daedalus</a></li><li><a href=\"/blog?tag=hephaestus\">Hephaestus</a></li></ul><select class=\"navbar__menu--dropdown\" id=\"menu-dropdown\"><option value=\"\" disabled selected>Tag</option><!-- placeholder --><option value=\"/blog?tag=apollo\">Apollo</option> <option value=\"/blog?tag=athena\">Athena</option> <option value=\"/blog?tag=daedalus\">Daedalus</option> <option value=\"/blog?tag=Hephaestus\">Hephaestus</option></select></div><!-- Right --><div class=\"navbar__right\"><select id=\"lang-switch\" class=\"lang-select\"><option value=\"en\">English</option> <option value=\"br\">Português</option></select></div></nav><main id=\"main-content\" class=\"content\" style=\"max-width: 700px; margin: 0 auto; padding: 0 3rem; left: 30%;\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>GuPoroca </title><link rel=\"icon\" href=\"/static/favicon.png\"><!-- Terminal theme --><link href=\"/static/all.css\" rel=\"stylesheet\"><link href=\"/static/colors.css\" rel=\"stylesheet\"><!-- HTMX --><script src=\"https://unpkg.com/htmx.org@1.9.10\"></script></head><body class=\"body\"><!-- Navbar --><nav class=\"navbar__inner\" style=\" margin: 0 auto; padding: 0.75 3rem;\"><!-- Left --><div class=\"navbar__left\"><a href=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var2 templ.SafeURL
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinURLErrs("/" + lang + "/blog/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 23, Col: 36}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "\" class=\"logo\">Home</a></div><!-- Middle (tags) --><div class=\"navbar__center\"><ul class=\"navbar__menu\"><li><a href=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var3 templ.SafeURL
+		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinURLErrs("/" + lang + "/blog/tags/apollo/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 28, Col: 53}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "\">Apollo</a></li><li><a href=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var4 templ.SafeURL
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinURLErrs("/" + lang + "/blog/tags/athena/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 29, Col: 53}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "\">Athena</a></li><li><a href=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var5 templ.SafeURL
+		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinURLErrs("/" + lang + "/blog/tags/daedalus/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 30, Col: 55}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "\">Daedalus</a></li><li><a href=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var6 templ.SafeURL
+		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinURLErrs("/" + lang + "/blog/tags/hephaestus/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 31, Col: 57}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "\">Hephaestus</a></li></ul><select class=\"navbar__menu--dropdown\" id=\"menu-dropdown\"><option value=\"\" disabled selected>Tag</option><!-- placeholder --><option value=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var7 string
+		templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs("/" + lang + "/blog/tags/apollo/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 35, Col: 55}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "\">Apollo</option> <option value=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var8 string
+		templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs("/" + lang + "/blog/tags/athena/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 36, Col: 55}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "\">Athena</option> <option value=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var9 string
+		templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs("/" + lang + "/blog/tags/daedalus/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 37, Col: 57}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "\">Daedalus</option> <option value=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var10 string
+		templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs("/" + lang + "/blog/tags/hephaestus/")
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/Layout.templ`, Line: 38, Col: 59}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "\">Hephaestus</option></select></div><!-- Right --><div class=\"navbar__right\"><select id=\"lang-switch\" class=\"lang-select\"><option value=\"en\">English</option> <option value=\"br\">Português</option></select></div></nav><main id=\"main-content\" class=\"content\" style=\"max-width: 700px; margin: 0 auto; padding: 0 3rem; left: 30%;\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -38,7 +155,7 @@ func Layout(content templ.Component) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</main><!-- Language Switcher Script --><script>\n\t\t\t(function () {\n\t\t\t  var sel = document.getElementById('lang-switch');\n\n\t\t\t  // Reflect current URL language in the dropdown\n\t\t\t  var m = location.pathname.match(/^\\/(en|br)(?=\\/|$)/);\n\t\t\t  sel.value = m ? m[1] : 'en';\n\n\t\t\t  // On change, swap language prefix but keep the rest of the URL\n\t\t\t  sel.addEventListener('change', function () {\n\t\t\t    var newLang = this.value;\n\n\t\t\t    // Remove current /en or /br prefix if present\n\t\t\t    var path = location.pathname.replace(/^\\/(en|br)(?=\\/|$)/, '');\n\t\t\t    if (path === '' || path === '/') path = '/';\n\n\t\t\t    var newPath = '/' + newLang + (path.startsWith('/') ? '' : '/') + path;\n\n\t\t\t    // Normalize accidental double slashes\n\t\t\t    newPath = newPath.replace(/\\/{2,}/g, '/');\n\n\t\t\t    // Navigate to new URL (preserve query & hash)\n\t\t\t    location.href = newPath + location.search + location.hash;\n\t\t\t  });\n\t\t\t})();\n\t\t\t</script><script>\n  const menuList = document.getElementById(\"menu-list\");\n  const menuDropdown = document.getElementById(\"menu-dropdown\");\n\n  // --- 1. Overflow detector ---\n  function toggleMenu() {\n    const isOverflowing = menuList.scrollWidth > menuList.clientWidth;\n    if (isOverflowing) {\n      menuList.style.display = \"none\";\n      menuDropdown.style.display = \"block\";\n    } else {\n      menuList.style.display = \"flex\";\n      menuDropdown.style.display = \"none\";\n    }\n  }\n\n  window.addEventListener(\"resize\", toggleMenu);\n  window.addEventListener(\"load\", toggleMenu);\n\n  // --- 2. Navigate when selecting option ---\n  menuDropdown.addEventListener(\"change\", function () {\n    if (this.value) {\n      window.location.href = this.value;\n    }\n  });\n\n  // --- 3. Reflect current URL tag in dropdown ---\nconst tagMatch = location.search.match(/tag=([^&]+)/);\nif (tagMatch) {\n  const currentTag = tagMatch[1].toLowerCase();\n  for (let option of menuDropdown.options) {\n    if (option.value.toLowerCase().includes(currentTag)) {\n      menuDropdown.value = option.value;\n      break;\n    }\n  }\n} else {\n  menuDropdown.value = \"\"; // stays on \"Tag\"\n  }\n</script>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 11, "</main><!-- Language Switcher Script --><script>\n\t\t\t(function () {\n\t\t\t  var sel = document.getElementById('lang-switch');\n\n\t\t\t  // Reflect current URL language in the dropdown\n\t\t\t  var m = location.pathname.match(/^\\/(en|br)(?=\\/|$)/);\n\t\t\t  sel.value = m ? m[1] : 'en';\n\n\t\t\t  // On change, swap language prefix but keep the rest of the URL\n\t\t\t  sel.addEventListener('change', function () {\n\t\t\t    var newLang = this.value;\n\n\t\t\t    // Remove current /en or /br prefix if present\n\t\t\t    var path = location.pathname.replace(/^\\/(en|br)(?=\\/|$)/, '');\n\t\t\t    if (path === '' || path === '/') path = '/';\n\n\t\t\t    var newPath = '/' + newLang + (path.startsWith('/') ? '' : '/') + path;\n\n\t\t\t    // Normalize accidental double slashes\n\t\t\t    newPath = newPath.replace(/\\/{2,}/g, '/');\n\n\t\t\t    // Navigate to new URL (preserve query & hash)\n\t\t\t    location.href = newPath + location.search + location.hash;\n\t\t\t  });\n\t\t\t})();\n\t\t\t</script><script>\n  const menuList = document.getElementById(\"menu-list\");\n  const menuDropdown = document.getElementById(\"menu-dropdown\");\n\n  // --- 1. Overflow detector ---\n  function toggleMenu() {\n    const isOverflowing = menuList.scrollWidth > menuList.clientWidth;\n    if (isOverflowing) {\n      menuList.style.display = \"none\";\n      menuDropdown.style.display = \"block\";\n    } else {\n      menuList.style.display = \"flex\";\n      menuDropdown.style.display = \"none\";\n    }\n  }\n\n  window.addEventListener(\"resize\", toggleMenu);\n  window.addEventListener(\"load\", toggleMenu);\n\n  // --- 2. Navigate when selecting option ---\n  menuDropdown.addEventListener(\"change\", function () {\n    if (this.value) {\n      window.location.href = this.value;\n    }\n  });\n\n  // --- 3. Reflect current URL tag in dropdown ---\nconst tagMatch = location.search.match(/tag=([^&]+)/);\nif (tagMatch) {\n  const currentTag = tagMatch[1].toLowerCase();\n  for (let option of menuDropdown.options) {\n    if (option.value.toLowerCase().includes(currentTag)) {\n      menuDropdown.value = option.value;\n      break;\n    }\n  }\n} else {\n  menuDropdown.value = \"\"; // stays on \"Tag\"\n  }\n</script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -46,7 +163,7 @@ func Layout(content templ.Component) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 12, "</body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

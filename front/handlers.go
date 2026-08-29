@@ -36,6 +36,9 @@ func BlogListHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	tag := r.URL.Query().Get("tag")
+	if tag == "" {
+		tag = chi.URLParam(r, "tag")
+	}
 
 	posts, err := data.LoadPosts(lang)
 
@@ -60,7 +63,7 @@ func BlogListHandler(w http.ResponseWriter, r *http.Request) {
 		templ.Handler(component).ServeHTTP(w, r)
 		return
 	}
-	templ.Handler(components.Layout(component)).ServeHTTP(w, r)
+	templ.Handler(components.Layout(component, lang)).ServeHTTP(w, r)
 }
 func BlogPostHandler(w http.ResponseWriter, r *http.Request) {
 	lang := chi.URLParam(r, "lang")
@@ -77,5 +80,5 @@ func BlogPostHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	component := components.Post(post)
-	templ.Handler(components.Layout(component)).ServeHTTP(w, r)
+	templ.Handler(components.Layout(component, lang)).ServeHTTP(w, r)
 }
