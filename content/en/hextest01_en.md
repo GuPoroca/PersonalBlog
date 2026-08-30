@@ -1,7 +1,7 @@
 +++
 title = "Hextest REST API testing"
 postname = "hextestv01"
-description = "My main project currently, testing REST APIs in an easy and simple way"
+description = "One of my learning projects, testing REST APIs in an easy and simple way"
 created_at = "18 Sep 2025"
 last_updated = "18 Sep 2025"
 author = "Poroca"

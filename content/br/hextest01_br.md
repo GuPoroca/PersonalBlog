@@ -1,7 +1,7 @@
 +++
 title = "Hextest REST API testing"
 postname = "hextestv01"
-description = "Meu projeto principal atualmente, Testar REST Api's de maineira fácil e simples"
+description = "Um dos meus projetos de aprendizado, Testar REST Api's de maineira fácil e simples"
 created_at = "18 Sep 2025"
 last_updated = "18 Sep 2025"
 author = "Poroca"
@@ -28,7 +28,7 @@ Em agosto desse ano me veio uma realização de que eu estava acomodado, e queri
     </figcaption>
 </figure>
 
-Escolhi Go como linguagem por causa do charme, sempre gostei de linguagens mais low level, mas não queria escolhe algo como C ou Zig por causa da aplicação que eu queria construir, e Rust me dá medo sinceramente. Go é rápido e simples, e me faz focar em resolver os problemas e não na linguagem em si. Sou um tanto odioso com toda a cultura de desenvolvimento web hoje em dia e seus frameworks, e não sou fã de javascript também. Então Go it is.
+Escolhi Go como linguagem por causa do charme, sempre gostei de linguagens mais low level, mas não queria escolher algo como C ou Zig por causa da aplicação que eu queria construir, e Rust me dá medo sinceramente. Go é rápido e simples, e me faz focar em resolver os problemas e não na linguagem em si. Sou um tanto odioso com toda a cultura de desenvolvimento web hoje em dia e seus frameworks, e não sou fã de javascript também. Então Go it is.
 
 ## A ferramenta
 

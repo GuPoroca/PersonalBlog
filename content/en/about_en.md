@@ -11,7 +11,7 @@ cover = "/images/eu.jpg"
 
 # Hello everyone,  
 
-My name is Gustavo Poroca, I’m (almost) graduating in Computer Engineering at UPE and I’m building this blog in my free time to document a bit of my day-to-day activities!  
+My name is Gustavo Poroca, I am a graduate in Computer Engineering at UPE and I’m building this blog in my free time to document a bit of my day-to-day activities!  
 
 ## A little about me:  
 My hobbies are very connected to computing, it’s an activity I genuinely enjoy. Besides that, I love puzzles (specifically the Rubik’s cube) and volleyball, even though I haven’t played much lately. Currently, I work as a QA Engineer at CESAR. I also love cats and penguins.  
